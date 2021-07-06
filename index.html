@@ -59,26 +59,26 @@
             </div>
             <div class="input-group f-class">
                 <div>
-                    <label for="">First Class ($150)</label>
+                    <label for="" id="firstClassTicketPrice">First Class ($)</label>
                     <input id="firstTicketInput" class="inp-style inp-width" value="0">
                 </div>
                 <div class="plus-minus-btn">
                     <div class="plus-minus-btn">
-                        <button id="plusBtn" type="button">+</button>
-                        <button id="mainusBtn" type=" button">-</button>
+                        <button onclick="handleFirstClassTicket(true)" type="button">+</button>
+                        <button onclick="handleFirstClassTicket(false)" type=" button">-</button>
                     </div>
                 </div>
             </div>
 
             <div class="input-group f-class">
                 <div>
-                    <label for="">Economy ($100)</label>
+                    <label for="" id="economyTicketPrice">Economy ($)</label>
                     <input id="economyTicketInput" class="inp-style inp-width" value="0">
                 </div>
                 <div class="plus-minus-btn">
                     <div class="plus-minus-btn">
-                        <button id="economyPlusBtn" type="button">+</button>
-                        <button id="economyMinusBtn" type=" button">-</button>
+                        <button onclick="handleEconomyTicket(true)" type="button">+</button>
+                        <button onclick=" handleEconomyTicket(false)" type=" button">-</button>
                     </div>
                 </div>
             </div>
