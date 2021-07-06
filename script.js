@@ -1,5 +1,4 @@
 function handleFirstClassTicket(isIncreased) {
-
     const firstClassTicketPrice = document.getElementById("firstTicketInput");
     const firstClassTicketPriceNumber = parseInt(firstClassTicketPrice.value);
     // const newFirstClassTicket = firstClassTicketPriceNumber + 1;
@@ -13,7 +12,7 @@ function handleFirstClassTicket(isIncreased) {
     firstClassTicketPrice.value = newFirstClassTicket;
     const ticketPrice = newFirstClassTicket * 150;
     document.getElementById("firstClassTicketPrice").innerText = 'First Class $' + ticketPrice;
-
+    handleTotalPrice()
 }
 
 function handleEconomyTicket(isIncreased) {
@@ -28,9 +27,39 @@ function handleEconomyTicket(isIncreased) {
     }
     economyTicketPrice.value = newEconomyTicketNumber;
     const ticketPrice = newEconomyTicketNumber * 100
-    document.getElementById("economyTicketPrice").innerText = 'Economy $' + ticketPrice
+    document.getElementById("economyTicketPrice").innerText = 'Economy $' + ticketPrice;
+    handleTotalPrice()
+}
+
+function handleTotalPrice() {
+
+    const firstClassTicketPrice = document.getElementById("firstTicketInput");
+    const firstClassTicketPriceNumber = parseInt(firstClassTicketPrice.value);
+
+    const economyTicketPrice = document.getElementById("economyTicketInput");
+    const economyTicketPriceNumber = parseInt(economyTicketPrice.value)
+
+    const subtotal = firstClassTicketPriceNumber * 150 + economyTicketPriceNumber * 100;
+    document.getElementById("subtotal").innerText = '$' + subtotal;
+
+    const vat = subtotal * 0.1;
+
+    document.getElementById("vat").innerText = '$' + vat;
+
+    const totalPrice = subtotal + vat;
+    document.getElementById("total").innerText = '$' + totalPrice;
 
 }
+
+
+document.getElementById("book").addEventListener("click", function () {
+    const hideBook = document.getElementById("hide");
+    hideBook.style.display = "none";
+    alert('Thank You For Purchase The Ticket')
+})
+
+
+
 
 
 
