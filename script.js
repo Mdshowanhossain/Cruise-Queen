@@ -32,26 +32,17 @@ function handleEconomyTicket(isIncreased) {
 }
 
 function handleTotalPrice() {
-
     const firstClassTicketPrice = document.getElementById("firstTicketInput");
     const firstClassTicketPriceNumber = parseInt(firstClassTicketPrice.value);
-
     const economyTicketPrice = document.getElementById("economyTicketInput");
     const economyTicketPriceNumber = parseInt(economyTicketPrice.value)
-
     const subtotal = firstClassTicketPriceNumber * 150 + economyTicketPriceNumber * 100;
     document.getElementById("subtotal").innerText = '$' + subtotal;
-
     const vat = subtotal * 0.1;
-
     document.getElementById("vat").innerText = '$' + vat;
-
     const totalPrice = subtotal + vat;
     document.getElementById("total").innerText = '$' + totalPrice;
-
 }
-
-
 document.getElementById("book").addEventListener("click", function () {
     const hideBook = document.getElementById("hide");
     hideBook.style.display = "none";
